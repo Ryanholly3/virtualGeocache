@@ -11,17 +11,33 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+import {
+  ViroARSceneNavigator
+} from 'react-viro';
 
-export default class Profile extends Component {
+var sharedProps = {
+  apiKey:"912A3CB8-1A43-42D2-BFDF-2659B6DA962E",
+}
+
+var InitialVRScene = require('./ARSceneScreen');
+
+export default class DashboardScreen extends Component {
 
   constructor() {
     super();
-
-    // Set initial state here
     this.state = {
       user: {}
     };
 
+  }
+
+  _getARNavigator() {
+    return (
+      <ViroARSceneNavigator {...this.state.sharedProps}
+        initialScene={{scene: InitialARScene}}
+        worldAlignment={"GravityAndHeading"}
+      />
+    );
   }
 
   render() {
@@ -30,13 +46,21 @@ export default class Profile extends Component {
         <View style={localStyles.inner} >
 
           <Text style={localStyles.titleText}>
-            PROFILE
+            DASHBOARD
           </Text>
+
+          <TouchableHighlight style={localStyles.buttons}
+            onPress={this._getARNavigator()}
+            underlayColor={'#68a0ff'} >
+
+            <Text style={localStyles.buttonText}>AR Mode</Text>
+          </TouchableHighlight>
 
         </View>
       </View>
     );
   }
+
 
 }
 
@@ -66,4 +90,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = Profile;
+module.exports = DashboardScreen;

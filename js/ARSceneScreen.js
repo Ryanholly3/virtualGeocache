@@ -21,7 +21,7 @@ import {
   ViroAnimations
 } from 'react-viro';
 
-export default class ARScene extends Component {
+export default class ARSceneScreen extends Component {
 
   constructor() {
     super();
@@ -186,4 +186,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = ARScene;
+module.exports = ARSceneScreen;
