@@ -11,6 +11,7 @@
     "react": "16.3.1",
     "react-native": "0.55.1",
     "react-native-gesture-handler": "^1.0.12",
+    "react-native-maps": "^0.22.1",
     "react-navigation": "^3.0.9",
     "react-viro": "2.12.0"
   },

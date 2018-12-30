@@ -1,34 +1,32 @@
 import React, { Component } from 'react';
 import { View, Text } from "react-native";
 import {
-  TabNavigator,
-  StackNavigator
+  createMaterialTopTabNavigator, createAppContainer
 } from 'react-navigation';
 
-export default class LoginScreen extends React.Component {
+class LoginScreen extends React.Component {
   render() {
     return (
-      <AppNavigator/>
+      <AppNavigator />
     );
   }
 }
 
 var ProfileScreen = require('./js/ProfileScreen')
 var DashboardScreen = require('./js/DashboardScreen')
-var ARSceneScreen = require('./js/ARSceneScreen')
+var MapScreen = require('./js/MapScreen')
 
-const AppNavigator = TabNavigator({
-  Login: { screen: LoginScreen },
+const TabNavigator = createMaterialTopTabNavigator({
   Profile: { screen: ProfileScreen },
   Dashboard: {screen: DashboardScreen },
-  ARScene: { screen: ARSceneScreen }
+  Map: { screen: MapScreen },
 },
 {
-  tabBarPosition: 'bottom',
+  tabBarPosition: 'top',
   animationEnabled: true,
   tabBarOptions: {
     activeTintColor: '#e91e63',
   },
 });
 
-module.exports = LoginScreen
+export default createAppContainer(TabNavigator)

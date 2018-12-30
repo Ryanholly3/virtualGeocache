@@ -26,10 +26,10 @@ export default class ProfileScreen extends Component {
 
   render() {
     return (
-      <View style={localStyles.outer} >
-        <View style={localStyles.inner} >
+      <View style={styles.outer} >
+        <View style={styles.inner} >
 
-          <Text style={localStyles.titleText}>
+          <Text style={styles.titleText}>
             PROFILE
           </Text>
 
