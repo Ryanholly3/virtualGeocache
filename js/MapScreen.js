@@ -11,36 +11,42 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
+import MapView from 'react-native-maps';
 
-export default class MapScreen extends Component {
+class MapScreen extends React.Component {
 
   constructor() {
     super();
 
-    // Set initial state here
     this.state = {
-      user: {}
+      latitude: 37.78825,
+      longitude: -122.4324,
+      latitudeDelta: 0.0922,
+      longitudeDelta: 0.0421,
     };
 
   }
 
+
   render() {
     return (
-      <View style={styles.outer} >
-        <View style={styles.inner} >
-
-          <Text style={styles.titleText}>
-            MAP
-          </Text>
-
-        </View>
-      </View>
+        <MapView
+          initialRegion={this.state}
+          style={styles.map}
+          showsCompass={true}
+        />
     );
   }
 
 }
 
 var styles = StyleSheet.create({
+  container: {
+   flex: 1,
+   justifyContent: 'center',
+   alignItems: 'center',
+   backgroundColor: '#fff'
+   },
   viroContainer :{
     flex : 1,
     backgroundColor: "black",
@@ -64,6 +70,11 @@ var styles = StyleSheet.create({
     textAlign:'center',
     fontSize : 25
   },
+  map: {
+    width: null,
+    height: 300,
+    flex: 1
+    }
 });
 
 module.exports = MapScreen;
