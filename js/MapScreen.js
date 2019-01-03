@@ -11,10 +11,10 @@ import {
   TouchableHighlight,
 } from 'react-native';
 
-// import MapView, { PROVIDER_GOOGLE} from 'react-native-maps';
+import MapView from 'react-native-maps'
 
 
-class MapScreen extends React.Component {
+export default class MapScreen extends Component {
 
   constructor() {
     super();
@@ -32,19 +32,17 @@ class MapScreen extends React.Component {
   render() {
     return (
         <View>
-
+          <MapView
+            initialRegion={this.state}
+            style={styles.map}
+            showsCompass={true}
+          />
           <Text style={styles.titleText}>
             DASHBOARD
           </Text>
         </View>
     );
   }
-  // <MapView
-  //   provider={ PROVIDER_GOOGLE }
-  //   initialRegion={this.state}
-  //   style={styles.map}
-  //   showsCompass={true}
-  // />
 
 
 }
@@ -85,5 +83,3 @@ var styles = StyleSheet.create({
     flex: 1
     }
 });
-
-module.exports = MapScreen;

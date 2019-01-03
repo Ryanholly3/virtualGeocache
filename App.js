@@ -14,9 +14,9 @@ class LoginScreen extends React.Component {
   }
 }
 
-var ProfileScreen = require('./js/ProfileScreen')
-var DashboardScreen = require('./js/DashboardScreen')
-var MapScreen = require('./js/MapScreen')
+import ProfileScreen from './js/ProfileScreen';
+import DashboardScreen from './js/DashboardScreen';
+import MapScreen from './js/MapScreen';
 
 const TabNavigator = createMaterialTopTabNavigator({
   Profile: { screen: ProfileScreen },
