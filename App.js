@@ -4,6 +4,8 @@ import {
   createMaterialTopTabNavigator, createAppContainer
 } from 'react-navigation';
 
+import MapView from 'react-native-maps';
+
 class LoginScreen extends React.Component {
   render() {
     return (
